@@ -6,7 +6,7 @@ const upload = multer({ dest: "uploads/image/" });
 
 let nextId = 1;
 
-function uploadPhoto(req, res, next) {
+const uploadPhoto = (req, res, next) => {
   upload.single("photo")(req, res, function (err) {
     if (err instanceof multer.MulterError) {
       return res.status(400).json({ error: "File is too large" });
@@ -40,6 +40,6 @@ function uploadPhoto(req, res, next) {
       res.status(500).json({ error: "Internal server error" });
     }
   });
-}
+};
 
 module.exports = { uploadPhoto };

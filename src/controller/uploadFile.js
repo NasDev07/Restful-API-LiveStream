@@ -27,7 +27,7 @@ const uploads = multer({
 });
 
 // Endpoint untuk mengunggah file
-function uploadFile(req, res, next) {
+const uploadFile = (req, res, next) => {
   try {
     const file = req.file;
     if (!file) {
@@ -66,6 +66,6 @@ function uploadFile(req, res, next) {
       res.status(500).json({ error: "Internal server error" });
     }
   }
-}
+};
 
 module.exports = { uploadFile, uploads };

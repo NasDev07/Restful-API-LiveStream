@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function getAllPhoto(req, res, next) {
+const getAllPhoto = (req, res, next) => {
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
     "Cache-Control": "no-cache",
@@ -36,6 +36,6 @@ function getAllPhoto(req, res, next) {
     clearInterval(intervalId);
     res.end();
   });
-}
+};
 
 module.exports = { getAllPhoto };

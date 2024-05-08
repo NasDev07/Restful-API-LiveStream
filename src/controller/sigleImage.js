@@ -1,7 +1,7 @@
 const fs = require("fs");
 const chokidar = require("chokidar"); // Tambahkan ini untuk menggunakan chokidar
 
-function sigleImage(req, res, next) {
+const sigleImage = (req, res, next) => {
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
     "Cache-Control": "no-cache",
@@ -52,6 +52,6 @@ function sigleImage(req, res, next) {
     watcher.close();
     res.end();
   });
-}
+};
 
 module.exports = { sigleImage };
